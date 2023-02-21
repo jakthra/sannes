@@ -4,7 +4,7 @@ name: Deploy vite
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,7 +17,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -27,24 +27,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Setup Node
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.14.1
-     
+          cache: 'npm'
       - name: Install dependencies
         uses: bahmutov/npm-install@v1.6.0
-        
+
       - name: Build project
         run: npm run build
-        
+
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3.1.2
         with:
           name: production-files
           path: ./dist
-      
+
   deploy:
     name: Deploy
     needs: build
