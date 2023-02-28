@@ -32,17 +32,18 @@ const Header = () => {
 
 const Landing = () => {
   return (
-    <div className="pb-100 h-full">
-      <div className="flex gap-20 lg:flex-row">
-        <div className="flex items-end">
-          <p>
-            Designer with passion for the ocean, susstainability &
-            responsebility
-          </p>
-        </div>
-        <div className="flex max-w-lg">
-          <img src={landing} className="object-cover" height={300} />
-        </div>
+    <div className="ml-40 flex flex-row gap-12 pb-12">
+      <div className="flex basis-1/5 items-end">
+        <p>
+          Designer with passion for the ocean, susstainability & responsebility
+        </p>
+      </div>
+      <div className="grow">
+        <img
+          className="object-cover"
+          src={landing}
+          style={{ height: '70vh', width: '100%' }}
+        />
       </div>
     </div>
   );
@@ -120,16 +121,16 @@ function App() {
     <div className="App ">
       <div className="flex h-screen flex-col">
         <Header />
-        <div className=" mx-40">
-          <Routes>
-            <Route path="/sannes" index element={<Landing />} />
-            <Route path="/sannes/about" element={<About />} />
-            <Route path="/sannes/work" element={<Work />} />
-            <Route path="/sannes/work/tech" element={<TechWorkItem />} />
-            <Route path="/sannes/work/casual" element={<CasualWorkItem />} />
-            <Route path="/sannes/work/jeans" element={<JeansWorkItem />} />
-          </Routes>
-        </div>
+        {/* <div className="mx-40"> */}
+        <Routes>
+          <Route path="/sannes" index element={<Landing />} />
+          <Route path="/sannes/about" element={<About />} />
+          <Route path="/sannes/work" element={<Work />} />
+          <Route path="/sannes/work/tech" element={<TechWorkItem />} />
+          <Route path="/sannes/work/casual" element={<CasualWorkItem />} />
+          <Route path="/sannes/work/jeans" element={<JeansWorkItem />} />
+        </Routes>
+        {/* </div> */}
       </div>
     </div>
   );
