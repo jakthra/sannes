@@ -49,7 +49,34 @@ const Landing = () => {
 };
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div className="">
+      <div className="flex flex-row">
+        <div className="h-60 basis-1/2 border-r-2 border-b-2 border-black"></div>
+        <div className="basis-1/2 border-b-2 border-black"></div>
+      </div>
+      <div className="flex flex-row">
+        <div className="basis-1/2 border-r-2  border-black"></div>
+        <div className="basis-1/2 border-black">
+          <div>
+            <div className="mx-16 mt-52 flex">
+              <div className="flex flex-col">
+                <div className="text-xl font-bold">About</div>
+                <div>me</div>
+                <div>
+                  Highly experienced designer within the fashion industry.
+                  Strong roots in casual and denim wear. Proven history with
+                  concept building within the commercial fashion business.Great
+                  interest in humans and holistic leadership, sustainability,
+                  responsibility.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Work = () => {
